@@ -20,5 +20,7 @@ namespace BookMaster.Models
         [Key]
         public string ISBN { get; set; }
 
+        [MinLength(0)]
+        public int Quantity { get; set; }
     }
 }
