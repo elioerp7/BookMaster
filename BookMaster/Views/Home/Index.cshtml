@@ -4,8 +4,10 @@
 
 <div class="jumbotron">
     <h1>Geek Text</h1>
-    <p class="lead">This is an online web application bookstore.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Search &raquo;</a></p>
+    @using (Html.BeginForm("SearchBooks", "Books", FormMethod.Post))
+    {
+        @Html.TextBox("search") <input type="submit" value="search" />
+    }
 </div>
 
 <div class="row">
