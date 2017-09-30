@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201709220107519_populate_books.Designer.cs">
       <DependentUpon>201709220107519_populate_books.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709292323451_image.cs" />
+    <Compile Include="Migrations\201709292323451_image.Designer.cs">
+      <DependentUpon>201709292323451_image.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -324,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709220107519_populate_books.resx">
       <DependentUpon>201709220107519_populate_books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709292323451_image.resx">
+      <DependentUpon>201709292323451_image.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
