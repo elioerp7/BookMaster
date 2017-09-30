@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -189,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -217,6 +219,10 @@
     <Compile Include="Migrations\201709220107519_populate_books.cs" />
     <Compile Include="Migrations\201709220107519_populate_books.Designer.cs">
       <DependentUpon>201709220107519_populate_books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709292323451_image.cs" />
+    <Compile Include="Migrations\201709292323451_image.Designer.cs">
+      <DependentUpon>201709292323451_image.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -283,6 +289,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Books\ShoppingCart.cshtml" />
+    <Content Include="Views\Books\SearchBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709220107519_populate_books.resx">
       <DependentUpon>201709220107519_populate_books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709292323451_image.resx">
+      <DependentUpon>201709292323451_image.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
