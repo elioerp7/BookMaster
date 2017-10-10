@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -189,8 +190,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,15 +221,46 @@
     <Compile Include="Migrations\201709220107519_populate_books.Designer.cs">
       <DependentUpon>201709220107519_populate_books.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709292323451_image.cs" />
+    <Compile Include="Migrations\201709292323451_image.Designer.cs">
+      <DependentUpon>201709292323451_image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710081502532_update.cs" />
+    <Compile Include="Migrations\201710081502532_update.Designer.cs">
+      <DependentUpon>201710081502532_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710081633411_update1.cs" />
+    <Compile Include="Migrations\201710081633411_update1.Designer.cs">
+      <DependentUpon>201710081633411_update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710081956449_update2.cs" />
+    <Compile Include="Migrations\201710081956449_update2.Designer.cs">
+      <DependentUpon>201710081956449_update2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710081959067_ShoppingCart.cs" />
+    <Compile Include="Migrations\201710081959067_ShoppingCart.Designer.cs">
+      <DependentUpon>201710081959067_ShoppingCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710082046096_OrderDetailUpdate.cs" />
+    <Compile Include="Migrations\201710082046096_OrderDetailUpdate.Designer.cs">
+      <DependentUpon>201710082046096_OrderDetailUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -283,9 +317,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Books\SearchBooks.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Book%27s Cover\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -320,6 +357,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709220107519_populate_books.resx">
       <DependentUpon>201709220107519_populate_books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709292323451_image.resx">
+      <DependentUpon>201709292323451_image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710081502532_update.resx">
+      <DependentUpon>201710081502532_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710081633411_update1.resx">
+      <DependentUpon>201710081633411_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710081956449_update2.resx">
+      <DependentUpon>201710081956449_update2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710081959067_ShoppingCart.resx">
+      <DependentUpon>201710081959067_ShoppingCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710082046096_OrderDetailUpdate.resx">
+      <DependentUpon>201710082046096_OrderDetailUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookMaster.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,12 @@ namespace BookMaster.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext data;
         public ActionResult Index()
         {
-            return View();
+            data = new ApplicationDbContext();
+
+            return View(data.Books.ToList());
         }
 
         public ActionResult About()

@@ -1,0 +1,44 @@
+﻿
+@model IEnumerable<BookMaster.Models.Book>
+
+@{
+    ViewBag.Title = "SearchBooks";
+}
+
+
+
+<div class="jumbotron">
+    @using (Html.BeginForm("SearchBooks", "Books", FormMethod.Get))
+    {
+        @Html.TextBox("search", null, new { @class = "navbar navbar-default" }) <input type="submit" class="btn btn-default btn-lg" value="search" />
+    }
+</div>
+
+
+
+@if (Model.Count() == 0)
+{
+    <tr>
+        <td colspan="3" style="color:red">
+            No match any document
+        </td>
+    </tr>
+}
+<div class="row" >
+        @if (Model.Count() != 0)
+        {
+            foreach (var item in Model)
+            {
+                <div class="col-lg-2 col-md-4 col-sm-4 col-xs-5">
+                    <div class="thumbnail">
+                        <img src="@item.image">
+                        <div class="caption">
+                            <h5>@item.Title</h5>
+                            <h6>@item.Author<br />$@item.Price</h6>
+                            <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a></p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }        
+</div>

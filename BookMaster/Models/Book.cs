@@ -22,5 +22,10 @@ namespace BookMaster.Models
 
         [MinLength(0)]
         public int Quantity { get; set; }
+
+        [MaxLength(255)]
+        public string image { get; set; }
+
+        public int isFeatured { get; set; }
     }
 }

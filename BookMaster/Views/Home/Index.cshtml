@@ -1,12 +1,38 @@
-﻿@{
+﻿@model IEnumerable<BookMaster.Models.Book>
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Geek Text</h1>
-    <p class="lead">This is an online web application bookstore.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Search &raquo;</a></p>
+<div class="jumbotron" style="background-color: #C6C7C4">
+    <div style="position:relative; left:330px">
+        <h1 style="position:relative; left:30px">Geek Text</h1>
+        @using (Html.BeginForm("SearchBooks", "Books", FormMethod.Post))
+        {
+            @Html.TextBox("search", null, new { @class = "navbar navbar-default" }) <input type="submit" class="btn btn-default btn-lg" value="search" />
+        }
+    </div>
 </div>
+
+<div class="row">
+    @if (Model.Count() != 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-5">
+                <div class="thumbnail">
+                    <img src="@item.image">
+                    <div class="caption">
+                        <h5>@item.Title</h5>
+                        <h6>@item.Author<br />$@item.Price</h6>
+                        <p>@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { @class = "btn btn-primary", id = item.ISBN, role = "button" }, "")</p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+
 
 <div class="row">
     <div class="col-md-4">
