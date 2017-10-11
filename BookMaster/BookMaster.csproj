@@ -260,6 +260,10 @@
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-BookMaster-20170918074315.mdf" />
+    <Content Include="App_Data\aspnet-BookMaster-20170918074315_log.ldf">
+      <DependentUpon>aspnet-BookMaster-20170918074315.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\Animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -321,7 +325,6 @@
     <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\Book%27s Cover\" />
   </ItemGroup>
   <ItemGroup>
