@@ -6,18 +6,15 @@ namespace BookMaster.Migrations
     {
         public override void Up()
         {
-            Sql("insert into Books (ISBN, Title, Description, Price, Author, Genre, Publisher) " +
-                "values ('978-0553593716', 'A Game of Thrones (A Song of Ice and Fire, Book 1)', " +
-                "'Description1', 40.30, 'George R. Martin', 'Fantasy', 'Bantam', 'https://prodimage.images-bn.com/pimages/9780553386790_p0_v5_s550x406.jpg' )");
+            Sql("INSERT INTO Books (`ISBN`, `Title`, `Description`, `Price`, `Author`,`Genre`, `Publisher`, `Quantity`, `image`, `isFeatured`) VALUES (N'978-0062315007', N'The Alchemist', N'Description7', 34.99, N'Paulo Coelho', N'Adventure', N'HarperOne', 60, N'http://t2.gstatic.com/images?q=tbn:ANd9GcTAyMeaePHdaWi1UppB8qvu2GtO4jfpufEsS3cR8Sp9Is-x3KXb', 1");
 
-            Sql("insert into Books (ISBN, Title, Description, Price, Author, Genre, Publisher) " +
-                "values ('978-1455582877', 'The Notebook', 'Description2', 20.50, 'Nicholas Sparks','Romance', 'Grand Central Publishing', 'https://prodimage.images-bn.com/pimages/9781455582877_p0_v2_s550x406.jpg')");
+            Sql("INSERT INTO Books (`ISBN`, `Title`, `Description`, `Price`, `Author`, `Genre`, `Publisher`, `Quantity`, `image`, `isFeatured`) VALUES (N'978-0156012195', N'The Little Prince', N'Description4', 7.99, N'Antoine de Saint-Exupéry', N'Adventure', N'Mariner Books', 70, N'https://books.google.com/books/content/images/frontcover/NhTyjt0V9tsC?fife=w300-rw', 1)");
 
         }
         
         public override void Down()
         {
-            Sql("delete * from Books");
+            Sql("truncate table Books");
         }
     }
 }
